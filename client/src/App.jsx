@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const [output, setOutput] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const age = e.target.age.value;
@@ -10,20 +12,28 @@ function App() {
     const weight = e.target.weight.value;
 
     if (age === "2") {
-      console.log(`${Number(weight * 0.06)} lbs of raw meat per day`);
+      setOutput(`${Number(weight * 0.06)} lbs of raw meat per day`);
     } else if (age === "4") {
-      console.log(`${Number(weight * 0.05)} lbs of raw meat per day`);
+      setOutput(`${Number(weight * 0.05)} lbs of raw meat per day`);
     } else if (age === "7") {
-      console.log(`${Number(weight * 0.04)} lbs of raw meat per day`);
+      setOutput(`${Number(weight * 0.04)} lbs of raw meat per day`);
     } else if (age === "12" && activity === "moderate") {
-      console.log(`${Number(weight * 0.02)} lbs of raw meat per day`);
+      setOutput(`${Number(weight * 0.02)} lbs of raw meat per day`);
     } else {
-      console.log(`${Number(weight * 0.03)} lbs of raw meat per day`);
+      setOutput(`${Number(weight * 0.03)} lbs of raw meat per day`);
     }
 
     console.log(e.target.age.value);
     console.log(e.target.activity.value);
     console.log(e.target.weight.value);
+  };
+
+  const handleOutput = (value) => {
+    return (
+      <div>
+        <p>this is the return</p>
+      </div>
+    );
   };
 
   return (
@@ -45,6 +55,7 @@ function App() {
         <input type="number" name="weight" step="any" />
         <button type="submit">Calculate</button>
       </form>
+      {output}
     </div>
   );
 }
