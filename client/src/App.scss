@@ -1,1 +1,67 @@
+.raw-main {
+  // background: pink;
+  width: 300px;
 
+
+  &__form {
+    // background: greenyellow;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    background: rgb(179, 124, 111);
+    color: white;
+    border: none;
+    border-radius: 20.5px;
+    height: 41px;
+    width: 152px;
+    transition: all .2s;
+    font-style: 12px;
+
+    &:hover {
+      background: rgba(179, 124, 111, 0.8);
+    }
+
+    &:active{
+      transform: translateY(2px) translateX(1px);
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+
+    & label {
+      padding: 8px 0;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    & input,
+    select {
+      height: 48px;
+      padding-left: 8px;
+      border: rgba(235, 144, 132, 0.5) 2px solid;
+      border-radius: 4px;
+
+      &:hover {
+        border: 2px solid #f5f5f5;
+      }
+
+      &:focus {
+        outline: none;
+        border: #eb9084 2px solid;
+      }
+    }
+  }
+}
+
+.calc-stats {
+  padding: 8px 0;
+}
